@@ -1,0 +1,40 @@
+{
+  "cat-food": [
+    {
+      "item-name": "Сказочное заморское яство",
+      "title": "Нямушка",
+      "subtitle": "с фуа-гра",
+      "description": "прекрасная печень",
+      "serving": 10,
+      "gift": 1,
+      "details": "",
+      "weight": 0.5,
+      "image": "",
+      "in-stock": true
+    },
+    {
+      "item-name": "Сказочное заморское яство",
+      "title": "Нямушка",
+      "subtitle": "с рыбой",
+      "description": "Головы щучьи с чесноком да свежайшая сёмгушка",
+      "serving": 40,
+      "gift": 2,
+      "details": "",
+      "weight": 2,
+      "image": "",
+      "in-stock": true
+    },
+    {
+      "item-name": "Сказочное заморское яство",
+      "title": "Нямушка",
+      "subtitle": "с курой",
+      "description": "прекрасная кура",
+      "serving": 100,
+      "gift": 5,
+      "details": "заказчик доволен",
+      "weight": 5,
+      "image": "",
+      "in-stock": false
+    }
+  ]
+}
