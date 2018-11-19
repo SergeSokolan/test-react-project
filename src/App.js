@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import data from "./data/goods.json";
 
 class App extends Component {
@@ -15,21 +14,24 @@ class App extends Component {
 
   render() {
     return (
-      <section className="goods">
-        <div className="goods__container">
-          <ul className="goods__list">
+      <section className='goods'>
+        <div className='goods__container'>
+          <ul className='goods__list'>
             {this.state.catFood.map( (item, index) => 
                <li className={`goods__item ${item.inStock === true ? 'goods__item_available' : 'goods__item_unavailable'}`} key={index}>
                <div className='goods-item__card'>
                 <span className='card__text card__text_large'>{item.brief}</span>
                   <h1 className='card__title'>{item.title}</h1>
                   <h2 className='card__title card__title_sub'>{item.subtitle}</h2>
-                  <span className='card__text'><b>{item.serving}</b> порций</span>
+                  <span className='card__text'><b className='bold'>{item.serving}</b> порций</span>
                   <span className='card__text'>
                     {item.gift === 1 ? (
                       'мышь в подарок'
                     ) : (
-                      <b>{item.gift} {this.declOfNum(item.gift, ['мышь', 'мыши', 'мышей'])} в подарок</b>
+                      [
+                        <b className='bold' key={index}>{item.gift}</b>,
+                        `${this.declOfNum(item.gift, ['мышь', 'мыши', 'мышей'])} в подарок`
+                      ]
                     )}
                   </span>
                   {item.details.length > 0 &&
