@@ -324,14 +324,28 @@ template {
   background-color: #cacaca;
   flex-wrap: wrap;
 }
-.item {
+.goods__item {
+  position: relative;
   width: 200px;
   margin: 20px;
   padding: 20px;
   box-sizing: border-box;
-  color: #fff;
-  background-color: purple;
+  color: #000;
+}
+.goods__item:hover .goods-item__bg {
+  stroke: red;
+}
+.goods-item__card {
+  position: relative;
+  z-index: 1;
 }
 .item_unavailable {
   background-color: gray;
+}
+.goods-item__bg {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
