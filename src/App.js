@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import data from "./data/goods.json";
+//import { ReactComponent as Background } from "./style/images/list-background.svg";
+import cat from "./style/images/cat.png";
 
 class App extends Component {
   constructor(props) {
@@ -30,25 +32,33 @@ class App extends Component {
                 }`}
                 key={index}
               >
-              
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    width="326px"
-                    height="486px"
-                  >
-                    <path
-                    className="goods-item__bg"
-                      fillRule="evenodd"
-                      stroke="rgb(22, 152, 217)"
-                      strokeWidth="4px"
-                      strokeLinecap="butt"
-                      strokeLinejoin="miter"
-                      fill="rgb(242, 242, 242)"
-                      d="M310.000,482.000 L14.000,482.000 C7.373,482.000 2.000,476.627 2.000,470.000 L2.000,45.000 L45.000,2.000 L310.000,2.000 C316.627,2.000 322.000,7.372 322.000,14.000 L322.000,470.000 C322.000,476.627 316.627,482.000 310.000,482.000 Z"
-                    />
-                  </svg>
-            
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  width="324px"
+                  height="484px"
+                  className="goods-item__bg"
+                >
+                  <defs>
+                    <pattern id="imgpattern" x="0" y="0" width="100%" height="100%"  patternUnits="userSpaceOnUse">
+                      <rect height="100%" width="100%" fill="white" />
+                      <image x="0" y="211" width="320" height="273" xlinkHref={cat} />
+                    </pattern>
+                  </defs>
+
+                  <path
+                    className="goods-item__bg-path"
+                    fillRule="evenodd"
+                    stroke="rgb(22, 152, 217)"
+                    strokeWidth="4px"
+                    strokeLinecap="butt"
+                    strokeLinejoin="miter"
+                    fill="url(#imgpattern)"
+                    fillOpacity="1"
+                    d="M310.000,482.000 L14.000,482.000 C7.373,482.000 2.000,476.627 2.000,470.000 L2.000,45.000 L45.000,2.000 L310.000,2.000 C316.627,2.000 322.000,7.372 322.000,14.000 L322.000,470.000 C322.000,476.627 316.627,482.000 310.000,482.000 Z"
+                  />
+                </svg>
+
                 <div className="goods-item__card">
                   <span className="card__text card__text_large">
                     {item.brief}

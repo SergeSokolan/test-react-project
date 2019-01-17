@@ -303,15 +303,20 @@ template {
 [hidden] {
   display: none;
 }
+/* layout */
+/* list */
 .goods {
   width: 100%;
-  height: 100vh;
-  background-color: #3d3d3d;
+  height: 100%;
+  background-image: url(./style/images/background.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.list {
+.goods__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -321,31 +326,46 @@ template {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  background-color: #cacaca;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 1217px) {
+  .goods {
+    align-items: flex-start;
+  }
 }
 .goods__item {
   position: relative;
-  width: 200px;
-  margin: 20px;
-  padding: 20px;
-  box-sizing: border-box;
+  width: 324px;
+  height: 484px;
   color: #000;
 }
-.goods__item:hover .goods-item__bg {
+.goods__item:hover .goods-item__bg-path {
   stroke: red;
+}
+.goods__item:nth-child(2) {
+  margin: 0 54px;
+}
+@media only screen and (max-width: 1217px) {
+  .goods__item:nth-child(2) {
+    margin: 0;
+  }
 }
 .goods-item__card {
   position: relative;
   z-index: 1;
+  padding: 25px 50px;
+  height: 100%;
+  box-sizing: border-box;
 }
 .item_unavailable {
   background-color: gray;
 }
 .goods-item__bg {
   position: absolute;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  z-index: 0;
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }
