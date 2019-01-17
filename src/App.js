@@ -42,7 +42,7 @@ class App extends Component {
                   <defs>
                     <pattern id="imgpattern" x="0" y="0" width="100%" height="100%"  patternUnits="userSpaceOnUse">
                       <rect height="100%" width="100%" fill="white" />
-                      <image x="0" y="211" width="320" height="273" xlinkHref={cat} />
+                      <image className="pattern-img" x="0" y="211" width="320" height="273" xlinkHref={cat} />
                     </pattern>
                   </defs>
 
@@ -60,17 +60,17 @@ class App extends Component {
                 </svg>
 
                 <div className="goods-item__card">
-                  <span className="card__text card__text_large">
+                  <span className="card__text card__text_large card__text_gray">
                     {item.brief}
                   </span>
                   <h1 className="card__title">{item.title}</h1>
                   <h2 className="card__title card__title_sub">
                     {item.subtitle}
                   </h2>
-                  <span className="card__text">
+                  <span className="card__text card__text_gray">
                     <b className="bold">{item.serving}</b> порций
                   </span>
-                  <span className="card__text">
+                  <span className="card__text card__text_gray">
                     {item.gift === 1
                       ? "мышь в подарок"
                       : [
@@ -85,7 +85,7 @@ class App extends Component {
                         ]}
                   </span>
                   {item.details.length > 0 && (
-                    <span className="card__text">{item.details}</span>
+                    <span className="card__text card__text_gray">{item.details}</span>
                   )}
                   <div className="card__ellipse">
                     <span className="ellipse__qty">{item.weight}</span>

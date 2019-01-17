@@ -1,22 +1,17 @@
-/* layout */
-
-@breakpoint: 1217px;
-
-/* list */
-
 .goods {
   width: 100%;
   height: 100%;
   background-image: url(./style/images/background.png);
   background-repeat: repeat;
   background-attachment: fixed;
-  background-size: cover; 
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .goods__list {
+  font-family: "Trebuchet MS";
   margin: 0;
   padding: 0;
   list-style: none;
@@ -29,34 +24,76 @@
   flex-wrap: wrap;
 }
 
-@media only screen  and (max-width: @breakpoint) {
-    .goods {
-        align-items: flex-start;
-    }
+@media only screen and (max-width: @breakpoint) {
+  .goods {
+    align-items: flex-start;
+  }
 }
 
 .goods__item {
+  cursor: pointer;
   position: relative;
   width: 324px;
   height: 484px;
   color: #000;
- 
   &:hover {
     .goods-item__bg-path {
-      stroke: red;
+      stroke: @red;
+    }
+    .card__ellipse {
+      background-color: @red;
     }
   }
   &:nth-child(2) {
-      margin: 0 54px;
+    margin: 0 54px;
+  }
+  &_unavailable {
+    cursor: default;
+    .goods-item__info {
+      color: @yellow;
+    }
+    .goods-item__bg-path {
+      stroke: @gray;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 5;
+      }
+    }
+    .pattern-img {
+      opacity: 0.6;
+    }
+    .card__ellipse {
+      background-color: @gray;
+    }
+    &:hover {
+      .goods-item__info {
+        color: @yellow;
+      }
+      .goods-item__bg-path {
+        stroke: @gray;
+      }
+      .card__ellipse {
+        background-color: @gray;
+      }
+    }
   }
 }
 
-@media only screen  and (max-width: @breakpoint) {
-    .goods__item {
-        &:nth-child(2) {
-            margin: 0;
-        }
+@media only screen and (max-width: @breakpoint) {
+  .goods__item {
+    &:nth-child(2) {
+      margin: 0;
     }
+  }
 }
 
 .goods-item__card {
@@ -73,4 +110,59 @@
 
 .goods-item__bg {
   position: absolute;
+}
+
+.card__title {
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0;
+  &_sub {
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
+.card__text {
+  display: block;
+  font-size: 14px;
+  &_large {
+    font-size: 16px;
+  }
+  &_gray {
+    color: @gray;
+  }
+}
+
+.goods-item__info {
+  font-size: 13px;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.card__ellipse {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  line-height: 30px;
+  background-color: @blue;
+}
+
+.ellipse__qty,
+.ellipse__uom {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ellipse__qty {
+  font-size: 42px;
+  margin-top: 15px;
+}
+.ellipse__uom {
+  font-size: 21px;
 }
