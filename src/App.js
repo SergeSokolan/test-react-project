@@ -20,8 +20,10 @@ class App extends Component {
 
   render() {
     return (
+     
       <section className="goods">
-        <div className="goods__container">
+       <h1 className="title">Ты сегодня покормил кота?</h1>
+             <div className="goods__container">
           <ul className="goods__list">
             {this.state.catFood.map((item, index) => (
               <li
@@ -40,9 +42,24 @@ class App extends Component {
                   className="goods-item__bg"
                 >
                   <defs>
-                    <pattern id="imgpattern" x="0" y="0" width="100%" height="100%"  patternUnits="userSpaceOnUse">
+                    <pattern
+                      id="pattern"
+                      x="0"
+                      y="0"
+                      width="100%"
+                      height="100%"
+                      patternUnits="userSpaceOnUse"
+                    >
                       <rect height="100%" width="100%" fill="white" />
-                      <image className="pattern-img" x="0" y="211" width="320" height="273" xlinkHref={cat} />
+                      <g id="img-overlay">
+                        <image
+                          x="0"
+                          y="211"
+                          width="320"
+                          height="273"
+                          xlinkHref={cat}
+                        />
+                      </g>
                     </pattern>
                   </defs>
 
@@ -53,8 +70,7 @@ class App extends Component {
                     strokeWidth="4px"
                     strokeLinecap="butt"
                     strokeLinejoin="miter"
-                    fill="url(#imgpattern)"
-                    fillOpacity="1"
+                    fill="url(#pattern)"
                     d="M310.000,482.000 L14.000,482.000 C7.373,482.000 2.000,476.627 2.000,470.000 L2.000,45.000 L45.000,2.000 L310.000,2.000 C316.627,2.000 322.000,7.372 322.000,14.000 L322.000,470.000 C322.000,476.627 316.627,482.000 310.000,482.000 Z"
                   />
                 </svg>
@@ -85,7 +101,9 @@ class App extends Component {
                         ]}
                   </span>
                   {item.details.length > 0 && (
-                    <span className="card__text card__text_gray">{item.details}</span>
+                    <span className="card__text card__text_gray">
+                      {item.details}
+                    </span>
                   )}
                   <div className="card__ellipse">
                     <span className="ellipse__qty">{item.weight}</span>
