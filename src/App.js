@@ -20,10 +20,9 @@ class App extends Component {
 
   render() {
     return (
-     
       <section className="goods">
-       <h1 className="title">Ты сегодня покормил кота?</h1>
-             <div className="goods__container">
+                <div className="goods__container">
+        <h1 className="title">Ты сегодня покормил кота?</h1>
           <ul className="goods__list">
             {this.state.catFood.map((item, index) => (
               <li

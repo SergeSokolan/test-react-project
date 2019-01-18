@@ -305,14 +305,34 @@ template {
 }
 .goods {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-image: url(./style/images/background.png);
   background-repeat: repeat;
   background-attachment: fixed;
-  background-size: cover;
+  position: relative;
+  padding-bottom: 100px;
+}
+.goods__container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 1217px) {
+  .goods__container {
+    align-items: flex-start;
+  }
+}
+.title {
+  font-family: "Exo 2.0";
+  font-size: 36px;
+  font-weight: normal;
+  color: #ffffff;
+  display: block;
+  margin: 45px auto 25px;
+  text-align: center;
 }
 .goods__list {
   font-family: "Trebuchet MS";
@@ -323,14 +343,9 @@ template {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-}
-@media only screen and (max-width: 1217px) {
-  .goods {
-    align-items: flex-start;
-  }
 }
 .goods__item,
 .goods__item_unavailable {
@@ -421,7 +436,7 @@ template {
   color: #ffffff;
   display: block;
   text-align: center;
-  margin-top: 12px;
+  padding-top: 12px;
 }
 .card__ellipse {
   position: absolute;
@@ -451,6 +466,14 @@ body,
 #root {
   width: 100%;
   height: 100%;
+}
+/* fonts */
+@font-face {
+  font-family: 'Exo 2.0';
+  src: url('./style/fonts/Exo20-Thin.eot');
+  src: url('./style/fonts/Exo20-Thin.eot?#iefix') format('embedded-opentype'), url('./style/fonts/Exo20-Thin.woff2') format('woff2'), url('./style/fonts/Exo20-Thin.woff') format('woff'), url('./style/fonts/Exo20-Thin.ttf') format('truetype'), url('./style/fonts/Exo20-Thin.svg#Exo2.0-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
 }
 /* layout */
 /* colors */

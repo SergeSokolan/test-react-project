@@ -1,8 +1,18 @@
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run dev`
+
+run "start" script with less-watch-compiler
+
+### `npm run deploy`
+
+deploy project
+https://sergesokolan.github.io/test-react-project/
 
 ### `npm start`
 
