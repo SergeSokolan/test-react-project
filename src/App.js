@@ -87,15 +87,15 @@ class App extends Component {
                   </span>
                   <span className="card__text card__text_gray">
                     {item.gift === 1
-                      ? "мышь в подарок"
+                      ? " мышь в подарок"
                       : [
                           <b className="bold" key={index}>
                             {item.gift}
                           </b>,
                           `${this.declOfNum(item.gift, [
-                            "мышь",
-                            "мыши",
-                            "мышей"
+                            " мышь",
+                            " мыши",
+                            " мышей"
                           ])} в подарок`
                         ]}
                   </span>

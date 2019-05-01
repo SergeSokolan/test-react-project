@@ -6,6 +6,9 @@
   background-attachment: fixed;
   position: relative;
   padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .goods__container {
@@ -29,7 +32,7 @@
   font-weight: normal;
   color: #ffffff;
   display: block;
-  margin: 45px auto 25px;
+  margin: 10px auto 25px;
   text-align: center;
 }
 
@@ -57,6 +60,7 @@
 
 .goods__item {
   cursor: pointer;
+  padding-bottom: 50px;
   &:hover {
     .goods-item__bg-path {
       stroke: @red;
@@ -97,14 +101,6 @@
     }
     .card__ellipse {
       background-color: @light-gray;
-    }
-  }
-}
-
-@media only screen and (max-width: @breakpoint) {
-  .goods__item {
-    &:nth-child(2) {
-      margin: 0;
     }
   }
 }
